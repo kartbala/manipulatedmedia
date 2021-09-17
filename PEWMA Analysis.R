@@ -35,13 +35,13 @@ axis(1, at=c(0, 92, 214, 336),labels=c("01/2020", "04/2020", "8/2020", "12/2020"
 
 #Using 'cases' as the independent variable, baseline and then expanded
 pewma.1 <- Pewma(tweetcount~-1+new_cases)
-pewma.2 <- Pewma(tweetcount~-1+new_cases+irneventpr+price+covidtrend+irantrend)
-pewma.3 <- Pewma(tweetcount~-1+new_cases+irneventpr+price+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
+pewma.2 <- Pewma(tweetcount~-1+new_cases+irneventpr+open+covidtrend+irantrend)
+pewma.3 <- Pewma(tweetcount~-1+new_cases+irneventpr+open+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
 
 #Using 'logged cases' as the independent variable, baseline and then expanded
 pewma.4 <- Pewma(tweetcount~-1+log(new_cases+1))
-pewma.5 <- Pewma(tweetcount~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend)
-pewma.6 <- Pewma(tweetcount~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
+pewma.5 <- Pewma(tweetcount~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend)
+pewma.6 <- Pewma(tweetcount~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
 
 ############################################################################
 ############PEWMA Models with Deaths as the Independent Variable############
@@ -49,13 +49,13 @@ pewma.6 <- Pewma(tweetcount~-1+log(new_cases+1)+irneventpr+price+covidtrend+iran
 
 #Using 'deaths' as the independent variable, baseline and then expanded
 pewma.7 <- Pewma(tweetcount~-1+new_deaths)
-pewma.8 <- Pewma(tweetcount~-1+new_deaths+irneventpr+price+covidtrend+irantrend)
-pewma.9 <- Pewma(tweetcount~-1+new_deaths+irneventpr+price+covidtrend+irantrend+global_new_deaths+iranprotest+iranmatconf)
+pewma.8 <- Pewma(tweetcount~-1+new_deaths+irneventpr+open+covidtrend+irantrend)
+pewma.9 <- Pewma(tweetcount~-1+new_deaths+irneventpr+open+covidtrend+irantrend+global_new_deaths+iranprotest+iranmatconf)
 
 #Using 'logged deaths' as the independent variable, baseline and then expanded
 pewma.10 <- Pewma(tweetcount~-1+log(new_deaths+1),omega.init=.02)
-pewma.11 <- Pewma(tweetcount~-1+log(new_deaths+1)+irneventpr+price+covidtrend+irantrend)
-pewma.12 <- Pewma(tweetcount~-1+log(new_deaths+1)+irneventpr+price+covidtrend+irantrend+log(global_new_deaths+1)+log(iranprotest+1)+log(iranmatconf+1))
+pewma.11 <- Pewma(tweetcount~-1+log(new_deaths+1)+irneventpr+open+covidtrend+irantrend)
+pewma.12 <- Pewma(tweetcount~-1+log(new_deaths+1)+irneventpr+open+covidtrend+irantrend+log(global_new_deaths+1)+log(iranprotest+1)+log(iranmatconf+1))
 
 ######################################################################################
 ############PEWMA Models with Proportion Cases as the Independent Variable############
@@ -63,8 +63,8 @@ pewma.12 <- Pewma(tweetcount~-1+log(new_deaths+1)+irneventpr+price+covidtrend+ir
 
 #Using 'proportion of global cases' as the independent variable, baseline and then expanded
 pewma.13 <- Pewma(tweetcount~-1+newcasepr)
-pewma.14 <- Pewma(tweetcount~-1+newcasepr+irneventpr+price+covidtrend+irantrend)
-pewma.15 <- Pewma(tweetcount~-1+newcaseprs+irneventpr+price+covidtrend+irantrend+iranprotest+iranmatconf)
+pewma.14 <- Pewma(tweetcount~-1+newcasepr+irneventpr+open+covidtrend+irantrend)
+pewma.15 <- Pewma(tweetcount~-1+newcaseprs+irneventpr+open+covidtrend+irantrend+iranprotest+iranmatconf)
 
 ###################################################################################################
 ############PEWMA Models with Cases as the Independent Variable, Excluding Farsi Tweets############
@@ -72,13 +72,13 @@ pewma.15 <- Pewma(tweetcount~-1+newcaseprs+irneventpr+price+covidtrend+irantrend
 
 #Using 'cases' as the independent variable, baseline and then expanded
 pewma.16 <- Pewma(tweetsnofarsi~-1+new_cases)
-pewma.17 <- Pewma(tweetsnofarsi~-1+new_cases+irneventpr+price+covidtrend+irantrend)
-pewma.18 <- Pewma(tweetsnofarsi~-1+new_cases+irneventpr+price+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
+pewma.17 <- Pewma(tweetsnofarsi~-1+new_cases+irneventpr+open+covidtrend+irantrend)
+pewma.18 <- Pewma(tweetsnofarsi~-1+new_cases+irneventpr+open+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
 
 #Using 'logged cases' as the independent variable, baseline and then expanded
 pewma.19 <- Pewma(tweetsnofarsi~-1+log(new_cases+1))
-pewma.20 <- Pewma(tweetsnofarsi~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend)
-pewma.21 <- Pewma(tweetsnofarsi~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
+pewma.20 <- Pewma(tweetsnofarsi~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend)
+pewma.21 <- Pewma(tweetsnofarsi~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
 
 ################################################################################################
 ############PEWMA Models with Cases as the Independent Variable, English-Only Tweets############
@@ -86,13 +86,13 @@ pewma.21 <- Pewma(tweetsnofarsi~-1+log(new_cases+1)+irneventpr+price+covidtrend+
 
 #Using 'cases' as the independent variable, baseline and then expanded
 pewma.22 <- Pewma(tweetsenglish~-1+new_cases)
-pewma.23 <- Pewma(tweetsenglish~-1+new_cases+irneventpr+price+covidtrend+irantrend)
-pewma.24 <- Pewma(tweetsenglish~-1+new_cases+irneventpr+price+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
+pewma.23 <- Pewma(tweetsenglish~-1+new_cases+irneventpr+open+covidtrend+irantrend)
+pewma.24 <- Pewma(tweetsenglish~-1+new_cases+irneventpr+open+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
 
 #Using 'logged cases' as the independent variable, baseline and then expanded
 pewma.25 <- Pewma(tweetsenglish~-1+log(new_cases+1))
-pewma.26 <- Pewma(tweetsenglish~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend)
-pewma.27 <- Pewma(tweetsenglish~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
+pewma.26 <- Pewma(tweetsenglish~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend)
+pewma.27 <- Pewma(tweetsenglish~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1))
 
 #######################################################################################
 ############PEWMA Models with Cases as the Independent Variable, with Drift############
@@ -100,13 +100,13 @@ pewma.27 <- Pewma(tweetsenglish~-1+log(new_cases+1)+irneventpr+price+covidtrend+
 
 #Using 'cases' as the independent variable, baseline and then expanded
 pewma.28 <- Pewma(tweetcount~new_cases)
-pewma.29 <- Pewma(tweetcount~new_cases+irneventpr+price+covidtrend+irantrend)
-pewma.30 <- Pewma(tweetcount~new_cases+irneventpr+price+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
+pewma.29 <- Pewma(tweetcount~new_cases+irneventpr+open+covidtrend+irantrend)
+pewma.30 <- Pewma(tweetcount~new_cases+irneventpr+open+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf) ###Won't Converge
 
 #Using 'logged cases' as the independent variable, baseline and then expanded
 pewma.31 <- Pewma(tweetcount~log(new_cases+1))  #Convergence Problems
-pewma.32 <- Pewma(tweetcount~log(new_cases+1)+irneventpr+price+covidtrend+irantrend)
-pewma.33 <- Pewma(tweetcount~log(new_cases+1)+irneventpr+price+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1)) ##Convergence problems
+pewma.32 <- Pewma(tweetcount~log(new_cases+1)+irneventpr+open+covidtrend+irantrend)
+pewma.33 <- Pewma(tweetcount~log(new_cases+1)+irneventpr+open+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1)) ##Convergence problems
 
 
 #####################################################################################################
@@ -118,15 +118,15 @@ pewma.33 <- Pewma(tweetcount~log(new_cases+1)+irneventpr+price+covidtrend+irantr
 #Using 'cases' as the independent variable, baseline and then expanded
 pw.1 <- prais_winsten(tweetcount~-1+new_cases,data=irandata)
 summary(pw.1)
-pw.2 <- prais_winsten(tweetcount~-1+new_cases+irneventpr+price+covidtrend+irantrend,data=irandata)
+pw.2 <- prais_winsten(tweetcount~-1+new_cases+irneventpr+open+covidtrend+irantrend,data=irandata)
 summary(pw.2)
-pw.3 <- prais_winsten(tweetcount~-1+new_cases+irneventpr+price+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf,data=irandata) ###Won't Converge
+pw.3 <- prais_winsten(tweetcount~-1+new_cases+irneventpr+open+covidtrend+irantrend+globalnew_cases+iranprotest+iranmatconf,data=irandata) ###Won't Converge
 summary(pw.3)
 
 #Using 'logged cases' as the independent variable, baseline and then expanded
 pw.4 <- prais_winsten(tweetcount~-1+log(new_cases+1),data=irandata)
 summary(pw.4)
-pw.5<- prais_winsten(tweetcount~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend,data=irandata)
+pw.5<- prais_winsten(tweetcount~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend,data=irandata)
 summary(pw.5)
-pw.6 <- prais_winsten(tweetcount~-1+log(new_cases+1)+irneventpr+price+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1),data=irandata)
+pw.6 <- prais_winsten(tweetcount~-1+log(new_cases+1)+irneventpr+open+covidtrend+irantrend+log(globalnew_cases+1)+log(iranprotest+1)+log(iranmatconf+1),data=irandata)
 summary(pw.6)
