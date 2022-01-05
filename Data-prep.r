@@ -32,6 +32,7 @@ sapply(1:number_of_sheets,Data_table_lister)
 
 # Merge all of the data tables
 Combined = list(daily.tweets,covid.daily.tweets,noncovid.daily.tweets,english.daily.tweets,no.farsi.daily.tweets,covid,oil,daily.events,protest.events,repression.events,weather) %>% reduce(left_join, by = "Date")
+#a = list(get(sheet_names[1]),get(sheet_names[2]))
 
 # Write file to Google Drive
 write.csv(Combined,file="InCombined.csv")
